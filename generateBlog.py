@@ -3,6 +3,7 @@ import datetime
 from crewai import Agent, Task, Crew, Process
 from crewai_tools import SerperDevTool
 from dotenv import load_dotenv
+import os
 
 # Load environment variables from .env file
 load_dotenv()
