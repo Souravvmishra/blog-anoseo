@@ -2,6 +2,18 @@ import streamlit as st
 import datetime
 from crewai import Agent, Task, Crew, Process
 from crewai_tools import SerperDevTool
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+os.environ["SERPER_API_KEY"] = os.getenv("SERPER_API_KEY")
 
 # Setup SEO tool
 seo_tool = SerperDevTool()
